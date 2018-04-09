@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "hipiler",
   "version": "0.1.0",
-  "description": "Template",
+  "description": "HiPiler Project Page",
   "private": true,
   "author": "Fritz Lekschas",
   "license": "MIT",
