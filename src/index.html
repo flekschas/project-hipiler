@@ -1,66 +1,64 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Fritz Lekschas">
-    <meta name="description" content="Description">
-    <meta name="keywords" content="Key words, key words, ...">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="author" content="Fritz Lekschas">
+  <meta name="description" content="Visual exploration of large genome interaction matrices with interactive small multiples.">
+  <meta name="keywords" content="Matrix Visualization, Hi-C, Genome Interaction Matrix, Interactive Small Multiples, Genome Contact Maps, Biomedical Visualization, Information Visualization, Chromosome Conformation Capture, Harvard University, Harvard John A. Paulson School of Enbgineering and Applied Sciences, Harvard Medical School, Visual Computing Group, Gehlenborg Lab">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Template</title>
+  <title>HiPiler</title>
 
-    <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
-    <link rel="apple-touch-icon" href="assets/images/touchicon.png">
-    <link rel="icon" href="assets/images/favicon.png"">
-    <!--[if IE]><link rel="shortcut icon" href="assets/images/favicon.ico"><![endif]-->
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="assets/images/tileicon.png">
+  <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
+  <link rel="apple-touch-icon" href="images/touchicon.png">
+  <link rel="icon" href="images/favicon.png"">
+  <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="images/tileicon.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,600" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="index.css" type="text/css">
+  <link rel="stylesheet" href="index.css" type="text/css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-<ID>"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1367902-4"></script>
+  <script>
+    /* eslint-disable */
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'UA-<ID>');
-    </script>
+    gtag('config', 'UA-1367902-4');
+    /* eslint-enable */
+  </script>
 </head>
 
 <body>
-  <div class="fullscreen">
-    <div class="content">
-      <h1>
+  <div class="content-wrapper">
+    <div class="content p-t-2 p-b-2">
+      <div id="bg-img"><div class="fade-out"></div></div>
+
+      <h1 class="on-top">
         <svg class="logo">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="images/icons.svg#refinery"></use>
+            xlink:href="images/icons.svg#logo"></use>
         </svg>
-        Title
+        HiPiler
       </h1>
-      <h2>Subtitle</h2>
-    </div>
+      <h2 class="on-top">Visual exploration<br/>of large genome interaction matrices<br/>with interactive small multiples.</h2>
 
-    <div class="bg"></div>
-
-    <video autoplay loop poster="assets/images/satori-short-first-frame.jpg" class="bg-video">
-      <source src="assets/videos/satori-short.webm" type="video/webm">
-      <source src="assets/videos/satori-short.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="fullscreen-blocker"></div>
-  <div class="content-wrapper">
-    <div class="content p-t-2 p-b-2">
       <!-------------------------------- TEASER ------------------------------->
-      <figure id="fig-teaser"></figure>
-      <p class="abstract larger m-b-2">Main description</p>
+      <video id="fig-teaser" loop poster="images/video-first-frame.jpg" class="bg-video on-top">
+        <source src="videos/about.webm" type="video/webm">
+        <source src="videos/about.mp4" type="video/mp4">
+      </video>
+      <p class="abstract">
+        HiPiler is an interactive web application for exploring and visualizing many features in large <a href="https://en.wikipedia.org/wiki/Chromosome_conformation_capture#Hi-C_.28all-vs-all.29" target="_blank">genome interaction matrices</a>. Genome interaction matrices approximate the physical distance of pairs of genomic regions to each other and can contain up to 3 million rows and columns. Traditional matrix aggregation or pan-and-zoom interfaces largely fail in supporting search, inspection, and comparison of local features. HiPiler represents features as thumbnail-like <em>snippets</em>. Snippets can be laid out automatically based on their data and meta attributes. They are linked back to the matrix, visualized with <a href="http://higlass.io" target="_blank">HiGlass</a>, and can be explored interactively.
+      </p>
 
       <!--------------------------------- NEWS -------------------------------->
-      <h3 id="news" class="iconized underlined anchored">
+      <h3 id="news" class="iconized underlined anchored on-top">
         <a href="#news" class="hidden-anchor">
           <svg class="icon">
             <use
@@ -68,14 +66,51 @@
               xlink:href="images/icons.svg#link"></use>
           </svg>
         </a>
-        <svg class="icon icon-new">
+        <svg class="icon">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xlink:href="images/icons.svg#new"></use>
         </svg>
         <span>News</span>
       </h3>
-      <p class="abstract">Some news</p>
+      <ol class="no-list-style large-spacing">
+        <li>
+          <a href="http://gehlenborg.com" target="_blank">Nils</a> talked about HiPiler and HiGlass at <a href="https://vizbi.org/2018" target="_blank">Visualizing Biologival Data (VIZBI) 2018</a>. <span class="data-links">[<a href="https://www.slideshare.net/ngehlenborg/visualization-of-3d-genome-data" target="_blank">Slides</a>]</span>
+          <em class="date">Mar 28th, 2018</em>
+        </li>
+        <li>
+          Version 1.2 is <a href="https://github.com/flekschas/hipiler/releases/tag/v1.2.0" target="_blank">out</a>, supporting five color maps with custom color scaling and featuring HiGlass version 0.10.11 <a href="https://github.com/flekschas/hipiler/blob/master/CHANGELOG.md" target="_blank">among other things</a>.
+          <em class="date">Jan 21st, 2018</em>
+        </li>
+        <li>
+          <a href="http://gehlenborg.com" target="_blank">Nils</a> talked about HiPiler and HiGlass at <a href="https://www.hsph.harvard.edu/2017-pqg-conference/" target="_blank">Harvard's 2017 PQG Conference</a>. <span class="data-links">[<a href="https://www.slideshare.net/ngehlenborg/higlass-hipiler-making-sense-of-chromosome-interaction-data-with-multiscale-data-visualization-tools-81568229" target="_blank">Slides</a>]</span>
+          <em class="date">Nov 2nd, 2017</em>
+        </li>
+        <li>
+          <a href="https://lekschas.de" target="_blank">Fritz</a> presented HiPiler and HiGlass at <a href="https://www.microsoft.com/en-us/research/event/cabi-2017/" target="_blank">Microsoft's Computational Aspects of Biological Information 2017</a>. <span class="data-links">[<a href="https://vcg.seas.harvard.edu/publications/hipiler-visual-exploration-of-large-genome-interaction-matrices-with-interactive-small-multiples/higlass-hipiler-cabi-2017.pdf" target="_blank">Poster</a>]</span>
+          <em class="date">Oct 13th, 2017</em>
+        </li>
+        <li>
+          <a href="https://lekschas.de" target="_blank">Fritz</a> presented HiPiler at <a href="http://ieeevis.org/year/2017/info/overview-amp-topics/papers-sessions" target="_blank">IEEE VIS</a> in Phoenix at InfoVis. <span class="data-links">[<a href="https://vimeo.com/238502606" target="_blank">Presentation</a> | <a href="https://speakerdeck.com/flekschas/hipiler-visual-exploration-of-large-genome-interaction-matrices-with-interactive-small-multiples" target="_blank">Slides</a>]</span>
+          <em class="date">Oct 5th, 2017</em>
+        </li>
+        <li>
+          <a href="https://lekschas.de" target="_blank">Fritz</a> was invited to pitch HiPiler at Harvard - Novartis Machine Learning and Computational Meeting.
+          <em class="date">Sep 22nd, 2017</em>
+        </li>
+        <li>
+          Nature published an <a href="http://blogs.nature.com/naturejobs/2017/09/11/techblog-hipiler-simplifies-chromatin-structure-analysis/" target="_blank">entire blog post</a> about HiPiler.
+          <em class="date">Sep 11th, 2017</em>
+        </li>
+        <li>
+          <a href="https://lekschas.de" target="_blank">Fritz</a> demonstrated HiPiler at <a href="https://www.4dnucleome.org" target="_blank">4D Nucleome</a> Annual Meeting 2017. <span class="data-links">[<a href="https://speakerdeck.com/flekschas/hipiler-exploring-many-hi-c-features-through-visual-decomposition" target="_blank">Slides</a> | <a href="https://vcg.seas.harvard.edu/publications/hipiler-visual-exploration-of-large-genome-interaction-matrices-with-interactive-small-multiples/poster" target="_blank">Poster</a>]</span>
+          <em class="date">Sep 7th, 2017</em>
+        </li>
+        <li>
+          HiPiler got accepted at <a href="http://ieeevis.org/year/2017/info/overview-amp-topics/papers-sessions" target="_blank">IEEE VIS (InfoVis)</a>.
+          <em class="date">Jul 11th, 2017</em>
+        </li>
+      </ol>
 
       <!------------------------------ SCREENCAST ----------------------------->
       <h3 id="screencast" class="iconized underlined anchored">
@@ -95,7 +130,7 @@
       </h3>
       <div id="youtube" class="video">
         <iframe
-          src="https://www.youtube.com/embed/WpbBoW2f4iM?rel=0&amp;showinfo=0"
+          src="https://www.youtube.com/embed/qoLqje5OYKg?rel=0&amp;showinfo=0"
           frameborder="0"
           allowfullscreen>
         </iframe>
@@ -119,35 +154,100 @@
       </h3>
 
       <section class="text">
-        <figure id="fig-user-roles">
-          <figcaption>Fig. 1: Exploration behavior of different user roles.</figcaption>
-        </figure>
+        <div class="columns">
+          <p class="column-1-2">
+            The human genome is about 2 meters long and tightly folded into each cell nucleus. This results in a dense, fractal-like and three-dimensional structure in which genome sequences that are distant on the genome, can be in close spatial proximity. It has been shown [<a href="#ref-1">1</a>] that this 3D structure is an important factor for regulation of gene expression, replication, DNA repair, and other biological functions. Biologists are interested in uncovering the mechanisms that drive global and local folding to better understand the vast and complex gene regulation network.
+          </p>
 
-        <p class="abstract first">
-          <strong>Why?</strong>  Biomedical repositories are growing rapidly and provide scientists with tremendous opportunities to re-use data. In order to exploit published data sets efficiently, it is crucial to understand the content of repositories and to discover data relevant to a question of interest. These are challenging tasks, as most repositories currently only support finding data sets through text-based search of metadata and in some cases also through metadata-based browsing. To address this, we conducted a task analysis through semi-structured interviews with 8 PhD-level domain experts and identified 3 distinct user roles (<a href="#fig-user-roles">Fig. 1</a>).
-        </p>
-
-        <figure id="fig-overview">
-          <figcaption>Fig. 2: <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr>'s system and data model.</figcaption>
-        </figure>
-
-        <p class="abstract"><strong>What?</strong>  Biological data sets consists of experimental data and metadata describing the studies, properties of the analyzed biological samples, and attributes of individual data files. In this context, a data set is a collection of data files, along with the metadata  (<a href="#fig-overview">Fig. 2</a>). Additionally, metadata is partially annotated with ontology terms. An ontology describes a certain domain (e.g. <em>human anatomy</em>), defines controlled vocabularies for its concepts and relationships (e.g., <em>kidney</em> and <em>is-part-of</em>) and relates concepts with each other (e.g., <em>nephron is-part-of kidney</em>). By means of ontology terms, sets of annotated data sets can be classified hierarchically. <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> extracts free-text and ontologically annotated metadata  (<a href="#fig-overview">Fig. 2</a>). The free-text metadata is indexed in a text-based search system. Additionally, data set-related ontology classes are parsed and visualized to provide semantic context to data sets. Since <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr>'s goal is to support exploration rather than to visualize ontologies themselves, only a relevant subtree of the ontologies is shown, i.e., effectively enforcing a strict containment hierarchy (<a href="#fig-ontology">Fig. 3</a>).</p>
-
-        <div class="flex-c m-t-2 m-b-2">
-          <figure id="fig-ontology" class="flex-g-1">
-            <figcaption>Fig. 3: Ontology pruning.</figcaption>
-          </figure>
-
-          <figure id="fig-precision-recall" class="flex-g-1">
-            <figcaption>Fig. 4: Precision and recall.</figcaption>
-          </figure>
+          <p class="column-1-2">
+            The probability of two sequences being in close proximity to each other, i.e. interacting, can be inferred using modern genome sequencing techniques, which yield for every genome a huge symmetric genome interaction matrix with up to 3 million rows and 3 million columns (<a href="#fig-hic">Fig. 1</a>). Each of the 9 trillion matrix cells represents the proximity of two genomic regions. Repetitive and hierarchically nested visual patterns (<a href="#fig-patterns">Fig. 2</a>), ranging from millions down to a few thousand base pairs in size, can be identified across the matrix, which represent so called regions of interest (ROIs).
+          </p>
         </div>
 
-        <figure id="fig-link-indication">
-          <figcaption>Fig. 5: Link location.</figcaption>
+        <div class="columns">
+          <div class="column-1-2">
+            <figure id="fig-hic">
+              <img
+                class="zoomable"
+                src="images/fig-hic.jpg"
+                alt="Fig. 1: Hi-C"
+              >
+              <figcaption>Fig. 1: Hi-C methodology: as the DNA (1) is organized non-arbitrarily in the cell nucleus (2), certain parts (highlighted in orange and blue) are frequently in close contact (3). These contacts are quantified over a set of several hundred million cells (4), leading to interaction matrix of up to 3 by 3 million cells (5). Dark colors indicate more frequent contact occurrences of two loci.</figcaption>
+            </figure>
+          </div>
+          <div class="column-1-2">
+            <figure id="fig-patterns">
+              <img
+                class="zoomable"
+                src="images/fig-patterns.jpg"
+                alt="Fig. 2: Hi-C Patterns"
+              >
+              <figcaption>Fig. 2: Examples of frequent patterns by increasing size. Loops (1) appear as dark central dots. Hierarchically-organized domains (2) are darker rectangles. Flames (3) are horizontal or vertical lines. Active and inactive compartments create a global checkerboard pattern (4).</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="columns m-t-2 m-b-2">
+          <p class="column-1-2">
+            Algorithms for automatic pattern detection are being development. However, these algorithms can be very complex and often identify tens of thousands of pattern instances. Results of algorithms designed to identify the same type of pattern often differ substantially [<a href="#ref-2">2</a>] and the lack of a ground-truth pattern collection hinders thorough evaluation of these algorithms.
+          </p>
+
+          <p class="column-1-2">
+            Interactive visualization tools have been developed [<a href="#ref-3">3</a>] but are focused on supporting visualization of a single or a small number of views of the matrix and navigation through pan and zoom [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>]. Detailed exploration and comparison of thousands of small ROIs is unsupported by current tools yet needed, due to the size and multiscale nature of the folded genome.
+          </p>
+        </div>
+
+        <p class="abstract m-t-2 m-b-2">
+          HiPiler is an interactive visualization tool designed for exploration and analysis of thousands of ROIs extracted from one or more genome interaction matrices.
+        </p>
+
+        <div id="Technique" class="columns m-t-0-5 m-b-1">
+          <p class="column-1-2">
+            To overcome the contextual constraints of exploring local patterns in large matrices, HiPiler follows a divide and explore approach that extracts ROIs from the matrix and enables independent exploration (<a href="#fig-approach">Fig. 3</a>). HiPiler assumes a given set of ROIs, derived from specialized pattern recognition algorithms. HiPiler then visualizes these ROIs as small heatmaps (matrices) which we call <em>snippets</em>. A snippet is associated with a set of ordinal and categorical attributes, such as its noisiness, size, or source dataset. This data is derived from the matrix itself or point to prior knowledge. Based on this data, HiPiler enables automatic and manual ordering, positioning, grouping, filtering, and visual manipulation to identify patterns present across the set of snippets. Additionally, the context of snippets in the matrix is maintained through highlighting of snippet locations in the interaction matrix.
+          </p>
+
+          <div class="column-1-2">
+            <figure id="fig-approach" class="m-t-0">
+              <img
+                class="zoomable"
+                src="images/fig-approach.jpg"
+                alt="Fig. 3: The snippets approach."
+              >
+              <figcaption>Fig. 3: The <em>snippets</em> approach: decompose a large matrix (1) into small snippets (2) and explore these snippets (3) using different layouts, arrangements, and styles, while maintaining global context.</figcaption>
+            </figure>
+            <p>
+              The design of HiPiler (<a href="#fig-design">Fig. 4</a>) is informed by semi-structured interviews with ten domain experts from various genomics research labs as well as iterative design sessions over the course of several months. These interviews led to the formulation of six tasks for the exploration of many ROIs in large matrices.
+            </p>
+          </div>
+        </div>
+
+        <figure id="fig-design">
+          <img
+            class="zoomable"
+            src="images/fig-design.jpg"
+            alt="Fig. 4: Design of visualization and interaction concepts in HiPiler."
+          >
+          <figcaption>Fig. 4: Design of visualization and interaction concepts in HiPiler.</figcaption>
         </figure>
 
-        <p class="abstract"><strong>How?</strong>  <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> is composed of two main interlinked views: the data set view and the exploration view. In the treemap an ontology term is illustrated by a rectangle. The area of the rectangle visualizes the size of the term relative to its sibling terms and the color indicates the distance to the farthest child term. The farther away this child term is, the darker is the color. The node-link diagram represents ontology terms as nodes and links shown parent and child terms (<a href="#fig-link-indication">Fig. 5</a>). Additionally, the diagram visualizes the precision and recall (<a href="#fig-precision-recall">Fig. 4</a>) for each term given the currently retrieved data sets. In this context, precision is useful to understand how frequently a term is used for annotation in the retrieved set of data sets and recall provides a notion of information scent by indicating if there are more data sets annotated with this term. Finally, the exploration view acts as a semantic query interface and lets users filter down collections of data sets via ontology term-based Boolean queries.</p>
+        <div id="evaluation" class="columns m-t-0-5 m-b-1">
+          <p class="column-1-2">
+            HiPiler is designed to support four types of scenarios. (i) visual evaluation of the results of pattern detection algorithms. (ii) characterization, aggregation, and outlier detection in large pattern collections (<a href="#fig-filter-compare-correlate">Fig. 5.1</a>). (iii) comparison of ROIs across multiple matrices (<a href="#fig-filter-compare-correlate">Fig. 5.2</a>), e.g., to compare different datasets, experimental conditions, or extraction algorithms.
+          </p>
+
+          <p class="column-1-2">
+            And (iv) correlation of matrix patterns with other genomic attributes (<a href="#fig-filter-compare-correlate">Fig. 5.3</a>), e.g., genes or protein-binding sites. We evaluated the usability and appropriateness of HiPiler through a user study with five domain experts. The results show that HiPiler is easy to learn and use, and that it offers important benefits for analyzing genome interaction matrices.
+          </p>
+        </div>
+
+        <figure id="fig-filter-compare-correlate">
+          <img
+            class="zoomable"
+            src="images/fig-filter-compare-correlate.jpg"
+            alt="Fig. 5: Design of HiPiler"
+          >
+          <figcaption>Fig. 5: Illustrations on how HiPiler supports (1) filtering and grouping, (2) comparison, and (3) correlation.</figcaption>
+        </figure>
       </section>
 
       <!----------------------------- PUBLICATION ----------------------------->
@@ -168,20 +268,23 @@
       </h3>
       <ol id="publications" class="no-list-style">
         <li class="reference">
-          <p class="title"><a href="https://doi.org/10.1093/bioinformatics/btx739" target="_blank">SATORI: A System for Ontology-Guided Visual Exploration of Biomedical Data Repositories</a></p>
+          <p class="title"><a href="https://doi.org/10.1109/TVCG.2017.2745978" target="_blank">HiPiler: Visual Exploration Of Large Genome Interaction Matrices With Interactive Small Multiples</a></p>
           <div class="secondary-information">
-            <ol class="no-list-style inline-list authors two-authors">
+            <ol class="no-list-style inline-list authors">
               <li>Fritz Lekschas</li>
+              <li>Benjamin Bach</li>
+              <li>Peter Kerpedjiev</li>
               <li>Nils Gehlenborg</li>
+              <li>Hanspeter Pfister</li>
             </ol>
-            <span class="journal">Bioinformatics</span>, Volume 34, Issue 7, 1 April 2018, Pages 1200–1207.
-            <span class="doi"><abbr title="Digital Object Identifier">doi</abbr>: <a href="https://doi.org/10.1093/bioinformatics/btx739" target="_blank">10.1093/bioinformatics/btx739</a></span>
+            <span class="journal">IEEE Transactions on Visualization and Computer Graphics</span> (InfoVis), 24, 1, 522-531, 2018.</span>
           </div>
         </li>
       </ol>
 
-      <h3 id="talks" class="iconized underlined anchored">
-        <a href="#talks" class="hidden-anchor">
+      <!---------------------------- PRESENTATIONS ---------------------------->
+      <h3 id="presentations" class="iconized underlined anchored">
+        <a href="#presentations" class="hidden-anchor">
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -193,125 +296,38 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xlink:href="images/icons.svg#presentation"></use>
         </svg>
-        Presentations
+        <span>Presentations</span>
       </h3>
-      <ol id="talks" class="no-list-style large-spacing">
-        <li>
-          Visual Exploration of Biomedical Data: from Small to Big, and Back Again
-          <div class="date smaller">
-            <svg class="icon icon-inline">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#calendar"></use>
-            </svg>
-            Oct 24, 2017
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#location"></use>
-            </svg>
-            Novartis
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#presentation"></use>
-            </svg>
-            Talk
-          </div>
-        </li>
-        <li>
-          To be FAIR, we should give Ontologies and Data Visualization a try
-          <div class="date smaller">
-            <svg class="icon icon-inline">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#calendar"></use>
-            </svg>
-            Jun 2017
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#location"></use>
-            </svg>
-            ISMB/ECCB, Prague
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#presentation"></use>
-            </svg>
-            Talk
-          </div>
-        </li>
-        <li>
-          <a href="assets/docs/poster_ieee_vis_2016.pdf" target="_blank">SATORI: A System for Ontology-Guided Visual Exploration of Biomedical Data Repositories</a>
-          <div class="date smaller">
-            <svg class="icon icon-inline">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#calendar"></use>
-            </svg>
-            Oct 26, 2016
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#location"></use>
-            </svg>
-            IEEE VIS
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#presentation"></use>
-            </svg>
-            Poster
-          </div>
-        </li>
-        <li>
-          <a href="https://speakerdeck.com/flekschas/satori-a-system-for-ontology-guided-visual-exploration-of-biomedical-data-repositories" target="_blank">SATORI: A System for Ontology-Guided Visual Exploration of Biomedical Data Repositories</a>
-          <div class="date">
-            <svg class="icon icon-inline">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#calendar"></use>
-            </svg>
-            Apr 15, 2016
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#location"></use>
-            </svg>
-            Department of Biomedical Informatics, Harvard Medical School
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#presentation"></use>
-            </svg>
-            Master Thesis Presentation
-          </div>
-        </li>
-        <li>
-          <a href="http://www.slideshare.net/ngehlenborg/approaches-for-the-integration-of-visual-and-computational-analysis-of-biomedical-data" target="_blank">Approaches for the Integration of Visual and Computational Analysis of Biomedical Data</a>
-          <div class="date">
-            <svg class="icon icon-inline">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#calendar"></use>
-            </svg>
-            Apr 6, 2016
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#location"></use>
-            </svg>
-            BioIT-World
-            <svg class="icon icon-inline m-l-1-2">
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="images/icons.svg#presentation"></use>
-            </svg>
-            Talk
-          </div>
-        </li>
-      </ol>
+      <div class="flex-c">
+        <div class="flex-g-1 column-1-2">
+          <strong>For VIS researchers:</strong>
+        </div>
+        <div class="flex-g-1 column-1-2 m-l-1">
+          <strong>For biomedical researchers:</strong>
+        </div>
+      </div>
+      <div class="flex-c">
+        <div class="flex-g-1 presentation-container">
+          <iframe
+            class="presentation"
+            src="//speakerdeck.com/player/5dea5d1a5e8b459baf97bfb8a585fe56"
+            allowfullscreen scrolling="no"></iframe>
+        </div>
+        <div class="flex-g-1 presentation-container">
+          <iframe
+            class="presentation"
+            src="//speakerdeck.com/player/d2ec2d11f6da4dee8ab07b5275f7e067"
+            allowfullscreen scrolling="no"></iframe>
+        </div>
+      </div>
+      <div class="flex-c smaller">
+        <p class="flex-g-1 column-1-2">
+          IEEE VIS InfoVis, Phoenix, 2017
+        </p>
+        <p class="flex-g-1 column-1-2 p-l">
+          4D Nucleome Annual Meeting, Bethesda, 2017
+        </p>
+      </div>
 
       <!----------------------------- SOURCE CODE ----------------------------->
       <h3 id="source-code" class="iconized underlined anchored">
@@ -329,14 +345,15 @@
         </svg>
         Source Code
       </h3>
-      <p>All parts of <abbr title="Semantic Annotation Tool and Ontological Relations Interface">SATORI</abbr> are publicly accessible and open-source.</p>
+      <p>All the code of HiPiler are publicly accessible and open-source.</p>
       <ul class="no-list-style large-spacing iconized smaller">
         <li class="iconized">
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xlink:href="images/icons.svg#github"></use>
-          </svg><a href="https://github.com/refinery-platform/refinery-platform" target="_blank">https://github.com/refinery-platform/refinery-platform</a>
+          </svg>
+          <a href="https://github.com/flekschas/hipiler" target="_blank">https://github.com/flekschas/hipiler</a>
         </li>
         <li class="iconized">
           <svg class="icon">
@@ -344,31 +361,7 @@
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xlink:href="images/icons.svg#github"></use>
           </svg>
-          <a href="https://github.com/refinery-platform/neo4j-ontology" target="_blank">https://github.com/refinery-platform/neo4j-ontology</a>
-        </li>
-        <li class="iconized">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#github"></use>
-          </svg>
-          <a href="https://github.com/refinery-platform/ontology-imports" target="_blank">https://github.com/refinery-platform/ontology-imports</a>
-        </li>
-        <li class="iconized">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#github"></use>
-          </svg>
-          <a href="https://github.com/flekschas/d3-list-graph" target="_blank">https://github.com/flekschas/d3-list-graph</a>
-        </li>
-        <li class="iconized">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="images/icons.svg#github"></use>
-          </svg>
-          <a href="https://github.com/flekschas/owl2neo4j" target="_blank">https://github.com/flekschas/owl2neo4j</a>
+          <a href="https://github.com/hms-dbmi/higlass-server" target="_blank">https://github.com/hms-dbmi/higlass-server</a>
         </li>
       </ul>
 
@@ -390,8 +383,8 @@
       </h3>
       <ol id="authors-list" class="no-list-style">
         <li>
-          <h4 class="blue">Fritz Lekschas</h4>
-          <p class="smaller">Harvard John A. Paulson School of Engineering and Applied Sciences</p>
+          <h4>Fritz Lekschas</h4>
+          <p>Harvard John A. Paulson School of Engineering and Applied Sciences</p>
           <ul class="no-list-style inline-list iconized remix-links">
             <li>
               <svg class="icon">
@@ -420,8 +413,68 @@
           </ul>
         </li>
         <li>
-          <h4 class="blue">Nils Gehlenborg</h4>
-          <p class="smaller">Department of Biomedical Informatics, Harvard Medical School</p>
+          <h4>Benjamin Bach</h4>
+          <p>University of Edinburgh</p>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="http://benjbach.me" target="_blank">http://benjbach.me</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/benjbach" target="_blank">benjbach</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/benjbach" target="_blank">benjbach</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Peter Kerpedjiev</h4>
+          <p>Harvard Medical School</p>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="http://emptypipes.org/" target="_blank">http://emptypipes.org</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/pkerpedjiev" target="_blank">pkerpedjiev</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/pkerpedjiev" target="_blank">pkerpedjiev</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Nils Gehlenborg</h4>
+          <p>Harvard Medical School</p>
           <ul class="no-list-style inline-list iconized remix-links">
             <li>
               <svg class="icon">
@@ -449,7 +502,77 @@
             </li>
           </ul>
         </li>
+        <li>
+          <h4>Hanspeter Pfister</h4>
+          <p>Harvard John A. Paulson School of Engineering and Applied Sciences</p>
+          <ul class="no-list-style inline-list iconized remix-links">
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#globe"></use>
+              </svg>
+              <a href="https://vcg.seas.harvard.edu" target="_blank">https://vcg.seas.harvard.edu</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#twitter"></use>
+              </svg>
+              <a href="https://twitter.com/hpfister" target="_blank">hpfister</a>
+            </li>
+            <li>
+              <svg class="icon">
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="images/icons.svg#github"></use>
+              </svg>
+              <a href="https://github.com/hpfister" target="_blank">hpfister</a>
+            </li>
+          </ul>
+        </li>
       </ol>
+
+      <!------------------------------ REFERENCES ----------------------------->
+      <h3 id="references" class="iconized underlined anchored">
+        <a href="#references" class="hidden-anchor">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="images/icons.svg#link"></use>
+          </svg>
+        </a>
+        <svg class="icon">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="images/icons.svg#bookmark"></use>
+        </svg>
+        References
+      </h3>
+      <ol class="no-list-style large-spacing iconized">
+        <li id="ref-1" class="flex-c reference">
+          <span class="number">[1]</span>
+          <span class="flex-g-1">Fraser and Bickmore. (2017) Nuclear organization of the genome and the potential for gene regulation. <em>Nature</em>, 447, 7143, 413–417.</span>
+        </li>
+        <li id="ref-2" class="flex-c reference">
+          <span class="number">[2]</span>
+          <span class="flex-g-1">Forcato et al. (2017) Comparison of computational methods for Hi-C data analysis. <em>Nature methods</em> 14, 7, 679.</span>
+        </li>
+        <li id="ref-3" class="flex-c reference">
+          <span class="number">[3]</span>
+          <span class="flex-g-1">Yardımcı and Noble. (2017) Software tools for visualizing Hi-C data. <em>Genome Biology</em>, 18, 1, 26.</span>
+        </li>
+        <li id="ref-4" class="flex-c reference">
+          <span class="number">[4]</span>
+          <span class="flex-g-1">Durand et al. (2016) Juicebox provides a visualization system for Hi-C contact maps with unlimited zoom. <em>Cell Systems</em>, 3, 1, 99–101.</span>
+        </li>
+        <li id="ref-5" class="flex-c reference">
+          <span class="number">[5]</span>
+          <span class="flex-g-1">Kerpedjiev et al. (2017) HiGlass: Web-based visual comparison and exploration of genome interaction maps. <em>bioRxiv</em>.</span>
+        </li>
+      </ol>
+    </div>
     </div>
 
     <footer id="footer">
@@ -479,6 +602,9 @@
         <p class="centered m-t-1 copyright">
         Copyright &copy; 2017 the President and Fellows of Harvard College. All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.
         </p>
+      </div>
+      <div id="more-at-lekschas-de" class="flex-c flex-jc-c">
+        <a href="https://lekschas.de/research">More Projects by Fritz Lekschas</a>
       </div>
     </footer>
   </div>

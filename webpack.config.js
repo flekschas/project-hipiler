@@ -8,17 +8,17 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   output: {
     filename: 'index.js',
-    path: __dirname + '/docs',
-    publicPath: '/'
+    path: `${__dirname}/docs`,
+    publicPath: '/',
   },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false
+        sourceMap: false,
       }),
-      new OptimizeCssAssetsPlugin({})
+      new OptimizeCssAssetsPlugin({}),
     ],
     splitChunks: {
       cacheGroups: {
@@ -26,10 +26,10 @@ module.exports = {
           name: 'index',
           test: /\.css$/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -47,8 +47,8 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       // Convert SASS to CSS, postprocess it, and bundle it
       {
@@ -60,13 +60,13 @@ module.exports = {
             options: {
               minimize: { safe: true },
               url: false,
-            }
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               plugins: () => [
-                require('postcss-flexbugs-fixes'),
+                require('postcss-flexbugs-fixes'), // eslint-disable-line
                 autoprefixer({
                   browsers: [
                     '>1%',
@@ -79,8 +79,8 @@ module.exports = {
               ],
             },
           },
-          'sass-loader',  // compiles Sass to CSS
-        ]
+          'sass-loader', // compiles Sass to CSS
+        ],
       },
       // Extract them HTML files
       {
@@ -88,9 +88,9 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true }
-          }
-        ]
+            options: { minimize: true },
+          },
+        ],
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -98,17 +98,17 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'index.css',
@@ -119,10 +119,10 @@ module.exports = {
       cache: true,
       flatten: true,
     }, {
-      from: 'src/docs/**/*',
-      to: 'docs/',
+      from: 'src/videos/**/*',
+      to: 'videos/',
       cache: true,
       flatten: true,
-    }])
-  ]
+    }]),
+  ],
 };

@@ -14,7 +14,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 500;
 }
 
 h1, h2, h3 {
@@ -46,8 +46,7 @@ h1, h2, h3, h4, h5, h6, p, li {
 h1 {
   font-size: 3rem;
   margin: 0;
-  text-transform: uppercase;
-  color: transparentize($primary, 0.075);
+  color: $primary;
   line-height: 1;
 
   .logo {
@@ -55,7 +54,7 @@ h1 {
     width: 2.5rem;
     height: 3rem;
     padding-right: 0.5rem;
-    color: transparentize(lighten(desaturate($primary, 33%), 50%), 0.1);
+    color: $gray-darker;
   }
 }
 
@@ -65,7 +64,7 @@ h2 {
 
 h1 + h2 {
   color: transparentize($black, 0.2);
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
@@ -97,13 +96,13 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
   transition: all $fast $ease;
 }
 
 a:hover {
-  color: $black;
-  box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 1);
+  color: $primary;
+  box-shadow: inset 0 -1px 0 0 $primary;
 }
 
 a:focus {
@@ -129,47 +128,40 @@ button:active {
 }
 
 b, strong {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 ::-webkit-selection {
-  color: $white;
-  background: $secondary;
+  color: $black;
+  background: $primary;
 }
 
 ::-moz-selection {
-  color: $white;
-  background: $secondary;
+  color: $black;
+  background: $primary;
 }
 
 ::selection {
-  color: $white;
-  background: $secondary;
+  color: $black;
+  background: $primary;
+}
+
+figure > img {
+  max-width: 100%;
 }
 
 figcaption {
-    font-size: 0.85em;
+  font-size: 0.9em;
+  line-height: 1.33em;
+  text-align: justify;
 }
 
 section.text {
   position: relative;
   overflow: auto;
 
-  p {
-    margin: 1.5em 0;
-
-    &:first-child,
-    &.first {
-        margin-top: 0;
-    }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-  }
-
   figure {
-    margin: 0.25em 2em;
+    margin: 2em 2em;
     padding: 0;
 
     figcaption {
@@ -194,7 +186,6 @@ section.text {
 
 .content-wrapper {
   position: relative;
-  z-index: 3;
   background: $white;
   box-shadow: 0 -1px 2rem 0 rgba(0, 0, 0, 0.1),
               0 -1px 6px 0 rgba(0, 0, 0, 0.1),
@@ -220,7 +211,9 @@ svg.centered {
 }
 
 .abstract {
-  text-align: justify;
+  font-size: 1.125em;
+  font-weight: 400;
+  color: $gray-darker;
 }
 
 .hidden-anchor {
@@ -256,7 +249,7 @@ h3:target .hidden-anchor {
 
 h3:target  {
   color: $black;
-  background: transparentize($secondary, 0.9);
+  background: transparentize($primary, 0.9);
 
   &:before {
     position: absolute;
@@ -265,18 +258,18 @@ h3:target  {
     bottom: 0;
     left: -2rem;
     width: 2rem;
-    background: transparentize($secondary, 0.9);
+    background: transparentize($primary, 0.9);
   }
 
   &.underlined:after {
     left: -2rem;
-    background: $secondary;
+    background: $primary;
   }
 
   .hidden-anchor {
     padding-right: 0.25rem;
     color: $white;
-    background: $secondary;
+    background: $primary;
   }
 }
 
@@ -321,7 +314,7 @@ ol.large-spacing li {
 }
 
 .smaller {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .underlined {
@@ -418,10 +411,6 @@ ul.iconized {
   vertical-align: center;
 }
 
-.icon-new {
-  color: $ternary;
-}
-
 .inline-list li {
   display: inline;
 }
@@ -429,7 +418,7 @@ ul.iconized {
 // Also known as `social-links`. But anything containing `social` will be
 // removed by adblockers.
 .remix-links {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .date {
@@ -454,7 +443,7 @@ ul.iconized {
 
 .reference {
   .title {
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 0.25rem;
   }
 
@@ -492,6 +481,10 @@ ul.iconized {
 
   .secondary-information {
     font-size: 0.9em;
+  }
+
+  .number {
+    margin-right: 0.5em;
   }
 }
 
@@ -539,45 +532,6 @@ ul.iconized {
   font-weight: bold;
 }
 
-.ribbon-wrapper {
-  width: 8.5em;
-  height: 8.5em;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.ribbon {
-  font-weight: bold;
-  color: $black;
-  text-align: center;
-  -webkit-transform: rotate(45deg);
-  -moz-transform:    rotate(45deg);
-  -ms-transform:     rotate(45deg);
-  -o-transform:      rotate(45deg);
-  position: relative;
-  padding: 0.375em 1em;
-  left: -1em;
-  top: 2.5em;
-  width: 10em;
-  background-color: transparentize($secondary, 0.05);
-  color: $white;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-
-  a {
-    box-shadow: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $white;
-      box-shadow: inset 0 -1px 0 0 $white;
-    }
-  }
-}
-
 .journal {
   font-style: italic;
 }
@@ -596,58 +550,153 @@ ul.iconized {
   width: 100%;
 }
 
+.presentation-container {
+  @include ratio(10, 7);
+
+  width: 50%;
+
+  margin: 0.5rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .presentation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.data-links {
+  font-size: 0.9em;
+}
+
+.on-top {
+  position: relative;
+  z-index: 1;
+}
+
 /*
  * -----------------------------------------------------------------------------
  * Specific styles, i.e. IDs
  * -----------------------------------------------------------------------------
  */
 
-#fig-teaser {
-  @include ratio(2520, 1324);
-  background: url(images/test.png) no-repeat center center;
+#bg-img {
+  @include ratio(2530, 1318);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url(images/matrix.jpg) no-repeat center center;
   background-size: cover;
+  opacity: 0.5;
+
+  .fade-out {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.01) 1%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 1%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 1%,rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  }
+}
+
+#fig-teaser {
+  @include ratio(1920, 1080);
+
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid $gray-lighter;
+  border-radius: 0.25rem;
+  background: $white;
+}
+
+#fig-approach {
+  margin-top: 0;
+  margin-bottom: 1.55em;
+}
+
+#authors-list h4 {
+  font-size: 1em;
+  font-weight: 400;
 }
 
 #authors-list h4 + p {
-  margin-top: -0.25rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9em;
 }
 
 #footer {
   margin-top: 1rem;
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
   font-size: 0.85em;
-  color: $white;
-  background: $primary;
-  box-shadow: inset 0 6rem 6rem -6rem rgba(0, 0, 0, 0.66);
+  color: $gray-medium;
+  border-top: 2px solid $gray-lightest;
+  background: $white;
 
   a {
-    box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.125);
   }
 
   a:hover {
-    color: $white;
-    box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1);
+    box-shadow: inset 0 -1px 0 0 $primary;
+  }
+
+  .vcg-name {
+    font-family: 'Open Sans Condensed';
+    text-align: right;
+    line-height: 1.125em;
   }
 
   .logo-hms,
-  .logo-dbmi {
-    color: $white;
+  .logo-seas,
+  .logo-vcg {
     height: 2em;
+    background-size: cover;
   }
 
   .logo-hms {
-    width: 10em;  /* 4 (w) : 1 (h) */
-    height: 2.5em;
+    width: 5.75em;  /* 4 (w) : 1 (h) */
+    height: 5em;
   }
 
-  .logo-dbmi {
-    width: 8.25em; /* 3.3 (w) : 1 (h) */
-    height: 2.5em;
+  .logo-seas {
+    width: 5.75em; /* 3.3 (w) : 1 (h) */
+    height: 5em;
+  }
+
+  .logo-vcg {
+    width: 5em; /* 3.3 (w) : 1 (h) */
+    height: 4.25em;
   }
 
   .copyright {
-    color: transparentize($white, 0.5);
-    font-size: 0.85em;
+    font-size: 0.9em;
+  }
+
+  #more-at-lekschas-de {
+    margin-top: 1rem;
+    padding: 0.75rem 0;
+    background: $black;
+
+    a {
+      color: $primary;
+      font-weight: 400;
+    }
   }
 }
 
@@ -722,22 +771,19 @@ ul.iconized {
 
 /* 960px */
 @media screen and (min-width: 60em) {
-  body {
-    font-size: 20px;
-  }
-
   h1 {
-    font-size: 9rem;
+    font-size: 6rem;
 
     .logo {
-      width: 6rem;
-      height: 13.5rem;
-      margin-left: -7rem;
+      width: 9rem;
+      height: 12rem;
+      margin-top: -1.5rem;
+      margin-left: -10rem;
     }
   }
 
   h1 + h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 
   .content {
@@ -793,24 +839,8 @@ ul.iconized {
 
 /* 1600px */
 @media screen and (min-width: 100em) {
-  body {
-    font-size: 24px;
-  }
-
-  .abstract {
-    font-size: 28px;
-  }
-
   .content {
     margin-left: 20%;  /* 1/5 */
     margin-right: 20%;
-  }
-
-  .pointer {
-    font-size: 48px;
-  }
-
-  .pointer-wrapper {
-    top: -5rem;
   }
 }
