@@ -124,14 +124,4 @@
       c0.719-0.279,1.289-0.609,1.691-0.98c0.455-0.417,0.686-0.873,0.686-1.354C15.756,12.315,15.525,11.86,15.07,11.442z"
       fill="currentColor"/>
   </symbol>
-  <symbol id="logo" viewBox="0 0 16 16">
-    <path d="M8 8.25L.75 11.633 8 15.017l7.25-3.384L8 8.25z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.7"/>
-    <path d="M8 6.8L.75 10.183 8 13.567l7.25-3.384L8 6.8z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.75"/>
-    <path d="M8 5.35L.75 8.733 8 12.117l7.25-3.384L8 5.35z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.8"/>
-    <path d="M8 3.9L.75 7.283 8 10.667l7.25-3.384L8 3.9z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.85"/>
-    <path d="M8 2.45L.75 5.833 8 9.217l7.25-3.384L8 2.45z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.9"/>
-    <path d="M8 1L.75 4.383 8 7.767l7.25-3.384L8 1z" fill="#fff" stroke="currentColor" stroke-width=".5" opacity="0.95"/>
-    <path d="M8 1L.75 4.383 8 7.767l7.25-3.384L8 1z" fill="none" stroke="currentColor" stroke-width=".5"/>
-    <path d="M11.625 6.075l-7.25-3.383M4.375 6.075l7.25-3.383" fill="none" stroke="currentColor" stroke-width=".5" stroke-linecap="butt"/>
-  </symbol>
 </svg>
