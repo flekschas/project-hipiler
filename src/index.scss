@@ -551,8 +551,9 @@ ul.iconized {
   @include ratio(10, 7);
 
   width: 50%;
-
   margin: 0.5rem;
+  border-radius: 0.25rem;
+  background: $gray-lighter;
 
   &:first-child {
     margin-left: 0;
@@ -605,29 +606,29 @@ ul.iconized {
 }
 
 #logo-1 {
-  animation-delay: 0.5s;
-}
-
-#logo-2 {
   animation-delay: 0.75s;
 }
 
-#logo-3 {
+#logo-2 {
   animation-delay: 1s;
 }
 
-#logo-4 {
+#logo-3 {
   animation-delay: 1.25s;
 }
 
+#logo-4 {
+  animation-delay: 1.5s;
+}
+
 #logo-5 {
-  animation-delay: 1.55s;
+  animation-delay: 1.75s;
 }
 
 #logo-6,
 #logo-6-b,
 #logo-6-x {
-  animation-delay: 1.75s;
+  animation-delay: 2s;
 }
 
 @keyframes fade-in {
@@ -777,6 +778,46 @@ ul.iconized {
 
 #youtube {
   @include ratio(3360, 2100);
+
+  .placeholder-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0.25rem;
+    background-image: url('images/video-placeholder.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    box-shadow: inset 0 0 0 1px $gray-lighter;
+    transition: box-shadow $fast $ease;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px $primary;
+
+      .icon-container {
+        opacity: 1;
+      }
+    }
+
+    .icon-container {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 6rem;
+      background: $primary;
+      opacity: 0.8;
+      transition: opacity $fast $ease;
+    }
+
+    .icon {
+      width: 6rem;
+      height: 6rem;
+      padding: 1rem 0.75rem 1rem 1.25rem;
+      color: $black;
+    }
+  }
 }
 
 /*
