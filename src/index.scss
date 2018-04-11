@@ -797,25 +797,28 @@ ul.iconized {
       cursor: pointer;
       box-shadow: inset 0 0 0 1px $primary;
 
-      .icon-container {
+      .icon {
         opacity: 1;
+
+        .secondary {
+          fill: $primary;
+        }
       }
     }
 
-    .icon-container {
-      width: 6rem;
-      height: 6rem;
-      border-radius: 6rem;
-      background: $primary;
+    .icon {
+      width: 8rem;
+      height: 8rem;
       opacity: 0.8;
       transition: opacity $fast $ease;
-    }
 
-    .icon {
-      width: 6rem;
-      height: 6rem;
-      padding: 1rem 0.75rem 1rem 1.25rem;
-      color: $black;
+      .primary {
+        fill: $black;
+      }
+      .secondary {
+        transition: fill $fast $ease;
+        fill: $gray-light;
+      }
     }
   }
 }
