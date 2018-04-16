@@ -53,6 +53,7 @@ h1 {
     float: left;
     width: 2.5rem;
     height: 3rem;
+    margin-top: -0.5rem;
     padding-right: 0.5rem;
     color: $gray-darker;
   }
@@ -588,60 +589,6 @@ ul.iconized {
  * -----------------------------------------------------------------------------
  */
 
-#logo-1,
-#logo-2,
-#logo-3,
-#logo-4,
-#logo-5,
-#logo-6,
-#logo-6-b,
-#logo-6-x {
-  animation-name: fade-in;
-  animation-duration: 1.25s;
-  animation-timing-function: $ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  transform: translate(0, -0.25rem);
-  opacity: 0;
-}
-
-#logo-1 {
-  animation-delay: 0.75s;
-}
-
-#logo-2 {
-  animation-delay: 1s;
-}
-
-#logo-3 {
-  animation-delay: 1.25s;
-}
-
-#logo-4 {
-  animation-delay: 1.5s;
-}
-
-#logo-5 {
-  animation-delay: 1.75s;
-}
-
-#logo-6,
-#logo-6-b,
-#logo-6-x {
-  animation-delay: 2s;
-}
-
-@keyframes fade-in {
-  0% {
-    transform: translate(0, -0.25rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-
 #bg-img {
   @include ratio(2530, 1318);
 
@@ -832,12 +779,28 @@ ul.iconized {
 /* 400px */
 @media screen and (min-width: 25em) {
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1.5;
 
     .logo {
-      width: 3rem;
-      height: 6rem;
+      width: 4rem;
+      height: 4.5rem;
+    }
+  }
+
+  h1 + h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* 568px (Pure.css Grid: SM) */
+@media screen and (min-width: 35.5em) {
+  h1 {
+    font-size: 3.5rem;
+
+    .logo {
+      width: 4.5rem;
+      height: 5rem;
     }
   }
 
@@ -846,36 +809,20 @@ ul.iconized {
   }
 }
 
-/* 568px (Pure.css Grid: SM) */
-@media screen and (min-width: 35.5em) {
-  h1 {
-    font-size: 6rem;
-
-    .logo {
-      width: 4.5rem;
-      height: 9rem;
-    }
-  }
-
-  h1 + h2 {
-    font-size: 3rem;
-  }
-}
-
 /* 640px */
 @media screen and (min-width: 40em) {
   h1 {
-    font-size: 7rem;
+    font-size: 4rem;
 
     .logo {
       width: 5rem;
-      height: 10.5rem;
+      height: 6rem;
       padding-right: 1rem;
     }
   }
 
   h1 + h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
   .content {
@@ -891,13 +838,12 @@ ul.iconized {
 /* 960px */
 @media screen and (min-width: 60em) {
   h1 {
-    font-size: 6rem;
+    font-size: 5rem;
 
     .logo {
-      width: 9rem;
-      height: 12rem;
-      margin-top: -1.5rem;
-      margin-left: -10rem;
+      width: 6rem;
+      height: 7rem;
+      margin-left: -6rem;
     }
   }
 
@@ -931,6 +877,13 @@ ul.iconized {
 @media screen and (min-width: 80em) {
   body {
     font-size: 18px;
+  }
+
+  h1 .logo {
+    width: 9rem;
+    height: 11rem;
+    margin-top: -2.75rem;
+    margin-left: -10rem;
   }
 
   .content {
